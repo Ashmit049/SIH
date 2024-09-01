@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Choice Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      background-color: aliceblue;
+    }
+    form {
+      margin-top: 20px;
+    }
+    .quiz-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .question {
+      width: 45%;
+      margin-bottom: 20px;
+      background-color: #fff;
+      padding: 20px;
+      position: relative;
+    }
+    .question:nth-child(odd) {
+      margin-right: 5%;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label:not(:first-child) {
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    label {
+      padding: 10px 0;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    #score-display {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #dff0d8;
+  border-radius: 5px;
+}
+    
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+    
+    .result {
+      font-weight: bold;
+      font-size: 22px;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .d-flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .question {
+      flex: 1 1 45%;
+      box-sizing: border-box;
+    }
+    .correct-answer {
+      font-style: italic;
+      color: #ff0000;
+      margin-top: 10px;
+    }
+    .reset-btn {
+      background-color: #f44336;
+    }
+    
+    .reset-btn:hover {
+      background-color: #d32f2f;
+    }
+    .submit-btn, .reset-btn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Multiple Choice Quiz</h1>
+    <hr>
+    <form id="quiz-form">
+      <div class="d-flex">
+        <div class="question">
+          <p>1. Who is the final interpreter of the Indian Constitution?</p>
+          <div class="answers">
+            <label for="q1-a">
+              <input type="radio" id="q1-a" name="q1" value="a">
+              President of India
+            </label>
+            <label for="q1-b">
+              <input type="radio" id="q1-b" name="q1" value="b">
+              Parliament of India
+            </label>
+            <label for="q1-c">
+              <input type="radio" id="q1-c" name="q1" value="c">
+              Supreme Court of India
+            </label>
+            <label for="q1-d">
+              <input type="radio" id="q1-d" name="q1" value="d">
+              Prime Minister of India
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q1"></div>
+        </div>
+        
+        <div class="question">
+          <p>2. Which article of the Indian Constitution deals with the Right to Sleep Peacefully?</p>
+          <div class="answers">
+            <label for="q2-a">
+              <input type="radio" id="q2-a" name="q2" value="a">
+              Article 14
+            </label>
+            <label for="q2-b">
+              <input type="radio" id="q2-b" name="q2" value="b">
+              Article 19
+            </label>
+            <label for="q2-c">
+              <input type="radio" id="q2-c" name="q2" value="c">
+              Article 21
+            </label>
+            <label for="q2-d">
+              <input type="radio" id="q2-d" name="q2" value="d">
+              Article 32
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q2"></div>
+        </div>
+
+        <div class="question">
+          <p>3. Who appoints the Chief Justice of India?</p>
+          <div class="answers">
+            <label for="q3-a">
+              <input type="radio" id="q3-a" name="q3" value="a">
+              President of India
+            </label>
+            <label for="q3-b">
+              <input type="radio" id="q3-b" name="q3" value="b">
+              Prime Minister of India
+            </label>
+            <label for="q3-c">
+              <input type="radio" id="q3-c" name="q3" value="c">
+              Parliament of India
+            </label>
+            <label for="q3-d">
+              <input type="radio" id="q3-d" name="q3" value="d">
+              Chief Justice of India
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q3"></div>
+        </div>
+
+        <div class="question">
+          <p>4. Which amendment of the Indian Constitution lowered the voting age from 21 to 18?</p>
+          <div class="answers">
+            <label for="q4-a">
+              <input type="radio" id="q4-a" name="q4" value="a">
+              42nd Amendment
+            </label>
+            <label for="q4-b">
+              <input type="radio" id="q4-b" name="q4" value="b">
+              44th Amendment
+            </label>
+            <label for="q4-c">
+              <input type="radio" id="q4-c" name="q4" value="c">
+              61st Amendment
+            </label>
+            <label for="q4-d">
+              <input type="radio" id="q4-d" name="q4" value="d">
+              73rd Amendment
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q4"></div>
+        </div>
+
+        <div class="question">
+          <p>5. Which article of the Indian Constitution guarantees protection against double jeopardy?</p>
+          <div class="answers">
+            <label for="q5-a">
+              <input type="radio" id="q5-a" name="q5" value="a">
+              Article 20
+            </label>
+            <label for="q5-b">
+              <input type="radio" id="q5-b" name="q5" value="b">
+              Article 21
+            </label>
+            <label for="q5-c">
+              <input type="radio" id="q5-c" name="q5" value="c">
+              Article 22
+            </label>
+            <label for="q5-d">
+              <input type="radio" id="q5-d" name="q5" value="d">
+              Article 25
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q5"></div>
+        </div>
+
+        <div class="question">
+          <p>6. Which amendment of the Indian Constitution introduced the Anti-Defection Law?</p>
+          <div class="answers">
+            <label for="q6-a">
+              <input type="radio" id="q6-a" name="q6" value="a">
+              42nd Amendment
+            </label>
+            <label for="q6-b">
+              <input type="radio" id="q6-b" name="q6" value="b">
+              44th Amendment
+            </label>
+            <label for="q6-c">
+              <input type="radio" id="q6-c" name="q6" value="c">
+              52nd Amendment
+            </label>
+            <label for="q6-d">
+              <input type="radio" id="q6-d" name="q6" value="d">
+              73rd Amendment
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q6"></div>
+        </div>
+
+        <div class="question">
+          <p>7. Which article of the Indian Constitution deals with the Right to Education?</p>
+          <div class="answers">
+            <label for="q7-a">
+              <input type="radio" id="q7-a" name="q7" value="a">
+              Article 14
+            </label>
+            <label for="q7-b">
+              <input type="radio" id="q7-b" name="q7" value="b">
+              Article 21A
+            </label>
+            <label for="q7-c" class="correct-answer-label">
+              <input type="radio" id="q7-c" name="q7" value="c">
+              Article 21A
+            </label>
+            <label for="q7-d">
+              <input type="radio" id="q7-d" name="q7" value="d">
+              Article 32
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q7"></div>
+        </div>
+
+        <div class="question">
+          <p>8. Which article of the Indian Constitution deals with the Right to Constitutional Remedies?</p>
+          <div class="answers">
+            <label for="q8-a">
+              <input type="radio" id="q8-a" name="q8" value="a">
+              Article 14
+            </label>
+            <label for="q8-b">
+              <input type="radio" id="q8-b" name="q8" value="b">
+              Article 19
+            </label>
+            <label for="q8-c">
+              <input type="radio" id="q8-c" name="q8" value="c">
+              Article 21
+            </label>
+            <label for="q8-d">
+              <input type="radio" id="q8-d" name="q8" value="d">
+              Article 32
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q8"></div>
+        </div>
+
+        <div class="question">
+          <p>9. Which amendment of the Indian Constitution introduced the reservation of seats for women in local bodies?</p>
+          <div class="answers">
+            <label for="q9-a">
+              <input type="radio" id="q9-a" name="q9" value="a">
+              73rd Amendment
+            </label>
+            <label for="q9-b">
+              <input type="radio" id="q9-b" name="q9" value="b">
+              74th Amendment
+            </label>
+            <label for="q9-c">
+              <input type="radio" id="q9-c" name="q9" value="c">
+              77th Amendment
+            </label>
+            <label for="q9-d">
+              <input type="radio" id="q9-d" name="q9" value="d">
+              86th Amendment
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q9"></div>
+        </div>
+
+        <div class="question">
+          <p>10. Which amendment of the Indian Constitution introduced the Right to Education as a Fundamental Right?</p>
+          <div class="answers">
+            <label for="q10-a">
+              <input type="radio" id="q10-a" name="q10" value="a">
+              86th Amendment
+            </label>
+            <label for="q10-b">
+              <input type="radio" id="q10-b" name="q10" value="b">
+              92nd Amendment
+            </label>
+            <label for="q10-c">
+              <input type="radio" id="q10-c" name="q10" value="c">
+              97th Amendment
+            </label>
+            <label for="q10-d">
+              <input type="radio" id="q10-d" name="q10" value="d">
+              104th Amendment
+            </label>
+          </div>
+          <div class="correct-answer" id="answer-q10"></div>
+        </div>
+      </div>
+      <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+      <button type="button" class="reset-btn" onclick="resetQuiz()">Reset</button>
+    </form>
+    <div id="score-display"></div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      // Correct answers for the questions
+      const correctAnswers = {
+        q1: 'c',
+        q2: 'c',
+        q3: 'a',
+        q4: 'c',
+        q5: 'a',
+        q6: 'c',
+        q7: 'c',
+        q8: 'd',
+        q9: 'a',
+        q10: 'a'
+      };
+
+      let score = 0;
+      const totalQuestions = Object.keys(correctAnswers).length;
+
+      // Iterate through each question to check answers and display correct answers
+      for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+        const correctAnswerElement = document.getElementById(`answer-${question}`);
+        
+        if (selectedOption) {
+          if (selectedOption.value === correctAnswer) {
+            score++; // Increment score for correct answer
+          } else {
+            selectedOption.parentElement.style.color = 'red'; // Incorrect answer styling
+          }
+        }
+
+        // Display the correct answer below the question
+        correctAnswerElement.textContent = `Correct answer: ${document.querySelector(`label[for="${question}-${correctAnswer}"]`).textContent.trim()}`;
+      }
+
+      // Display the score after checking all questions
+      const scoreDisplay = document.getElementById('score-display');
+      scoreDisplay.textContent = `Your Score: ${score} out of ${totalQuestions}`;
+    }
+    function resetQuiz() {
+      // Reset all radio buttons
+      const radioButtons = document.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach(radio => {
+        radio.checked = false;
+        radio.parentElement.style.color = ''; // Reset color styling
+      });
+
+      // Clear correct answer displays
+      const correctAnswerElements = document.querySelectorAll('.correct-answer');
+      correctAnswerElements.forEach(element => {
+        element.textContent = '';
+      });
+
+      // Clear score display
+      const scoreDisplay = document.getElementById('score-display');
+      scoreDisplay.textContent = '';
+
+      // Scroll to the top of the quiz
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>

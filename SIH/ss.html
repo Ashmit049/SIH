@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match the Following - Constitution of India</title>
+    <style>
+        /* Common Styles for All Pages */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-list li a:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .welcome-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .welcome-container h2 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #27ae60;
+        }
+
+        .welcome-container p {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .celebration {
+            font-size: 3.5em;
+            color: #e74c3c;
+        }
+
+        .journey-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .level, .points {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .level h3, .points h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #2980b9;
+        }
+
+        .level p, .points p {
+            font-size: 1.4em;
+            color: #555;
+        }
+
+        .progress-bar {
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 22px;
+            margin-top: 10px;
+        }
+
+        .progress {
+            background-color: #2ecc71;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .leaderboard-container {
+            margin-top: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .leaderboard-table th, .leaderboard-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .leaderboard-table th {
+            background-color: #2c3e50;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .leaderboard-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .leaderboard-table tr:hover {
+            background-color: #f1c40f;
+        }
+
+        .games-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .games-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .games-list li {
+            margin: 10px 0;
+        }
+
+        .games-list li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 1.3em;
+            padding: 15px;
+            display: block;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .games-list li a:hover {
+            background-color: #bdc3c7;
+            transform: translateY(-2px);
+        }
+
+        .crossword-container {
+            /* Style for crossword game content */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        /* Specific Styles for Match the Following Section */
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .column {
+            width: 45%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        li.selected {
+            background-color: #87cefa;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #resetButton {
+            background-color: #dc3545;
+        }
+
+        #resetButton:hover {
+            background-color: #c82333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+       
+       
+    </header>
+
+   
+
+    <section class="section">
+        <div class="container">
+            <div class="column">
+                <h2>Articles of the Constitution of India</h2>
+                <ul id="articles">
+                    <li data-answer="2">A. Article 14</li>
+                    <li data-answer="1">B. Article 15</li>
+                    <li data-answer="4">C. Article 16</li>
+                    <li data-answer="3">D. Article 17</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Provisions</h2>
+                <ul id="provisions">
+                    <li data-answer="1">1. The State shall not discriminate against any citizen on grounds only of religion, race, caste, sex, place of birth or any of them</li>
+                    <li data-answer="2">2. The State shall not deny to any person equality before the law or the equal protection of laws within the territory of India</li>
+                    <li data-answer="3">3. 'Untouchability' is abolished and its practice in any form is forbidden</li>
+                    <li data-answer="4">4. There shall be equality of opportunity for all citizens in matters relating to employment or appointment to any office under the State</li>
+                </ul>
+            </div>
+        </div>
+
+        <button onclick="checkAnswers()">Check Answers</button>
+        <button id="resetButton" onclick="resetGame()">Reset</button>
+        <div id="result"></div>
+    </section>
+
+   
+
+    <script>
+        let selectedArticle = null;
+
+        const articles = document.querySelectorAll("#articles li");
+        const provisions = document.querySelectorAll("#provisions li");
+
+        articles.forEach(article => {
+            article.addEventListener("click", function () {
+                if (selectedArticle) {
+                    selectedArticle.classList.remove("selected");
+                }
+                selectedArticle = this;
+                this.classList.add("selected");
+            });
+        });
+
+        provisions.forEach(provision => {
+            provision.addEventListener("click", function () {
+                if (selectedArticle) {
+                    const articleAnswer = selectedArticle.getAttribute("data-answer");
+                    const provisionAnswer = this.getAttribute("data-answer");
+
+                    if (articleAnswer === provisionAnswer) {
+                        selectedArticle.style.backgroundColor = "#2ecc71";
+                        this.style.backgroundColor = "#2ecc71";
+                        selectedArticle.classList.remove("selected");
+                        selectedArticle = null;
+                    } else {
+                        selectedArticle.style.backgroundColor = "#e74c3c";
+                        this.style.backgroundColor = "#e74c3c";
+                        selectedArticle.classList.remove("selected");
+                        selectedArticle = null;
+                    }
+                }
+            });
+        });
+
+        function checkAnswers() {
+            const correctArticles = document.querySelectorAll("#articles li[data-answer='1'], #articles li[data-answer='2'], #articles li[data-answer='3'], #articles li[data-answer='4']");
+            let correctCount = 0;
+
+            correctArticles.forEach(article => {
+                if (article.style.backgroundColor === "rgb(46, 204, 113)") {
+                    correctCount++;
+                }
+            });
+
+            const result = document.getElementById("result");
+            result.textContent = `You matched ${correctCount} out of ${correctArticles.length} correctly.`;
+        }
+
+        function resetGame() {
+            articles.forEach(article => {
+                article.style.backgroundColor = "#ddd";
+                article.classList.remove("selected");
+            });
+
+            provisions.forEach(provision => {
+                provision.style.backgroundColor = "#ddd";
+            });
+
+            selectedArticle = null;
+            document.getElementById("result").textContent = "";
+        }
+    </script>
+
+</body>
+</html>

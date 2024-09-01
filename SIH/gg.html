@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decalogue - Constitution Learning Path</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100%;
+            background-color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .sidebar img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar a {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        main {
+            margin-left: 100px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .path-container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            margin: 20px 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+            text-align: left;
+            width: 100%;
+        }
+
+        .node-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .node {
+            width: 80px;
+            height: 80px;
+            background-color: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .node.book {
+            background-color: #2980b9;
+        }
+
+        .node:hover {
+            transform: scale(1.1);
+        }
+
+        .line {
+            flex: 1;
+            height: 3px;
+            background-color: #ecf0f1;
+            margin: 0 10px;
+        }
+
+        .progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .progress-item {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: #ecf0f1;
+        }
+
+        .progress-item img {
+            width: 32px;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .node-container {
+                flex-direction: column;
+            }
+            .line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Decalogue - Learn the Constitution</h1>
+    </header>
+
+    <div class="sidebar">
+        <img src="home-icon.png" alt="Home">
+        <img src="progress-icon.png" alt="Progress">
+        <img src="settings-icon.png" alt="Settings">
+    </div>
+
+    <main>
+        <div class="path-container">
+            <div class="section-title">Preamble:</div>
+            <div class="node-container">
+                <div class="node">📗</div>
+                <div class="line"></div>
+                <div class="node book">📘</div>
+                <div class="line"></div>
+                <div class="node book">📘</div>
+            </div>
+        </div>
+
+        <div class="path-container">
+            <div class="section-title">Parts:</div>
+            <div class="node-container">
+                <div class="node">📗</div>
+                <div class="line"></div>
+                <div class="node">📗</div>
+                <div class="line"></div>
+                <div class="node book">📘</div>
+            </div>
+        </div>
+
+        <div class="progress">
+            <div class="progress-item">
+                <img src="flame-icon.png" alt="Progress Flame"> 32🔥
+            </div>
+            <div class="progress-item">
+                Siddharth Singh
+            </div>
+        </div>
+    </main>
+</body>
+</html>

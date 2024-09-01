@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Interface</title>
+   
+    <style>
+        body {
+            font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            border-width: 0;
+            cursor: pointer;
+        }
+
+        #menu {
+            position: relative;
+            list-style-type: none;
+            padding-left: 5px;
+            z-index: 1000;
+            display: inline-block;
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        #menu li {
+            margin: 2px;
+            padding: 4px 10px;
+            border-radius: 5px;
+            background-color: #ffff80;
+            cursor: pointer;
+        }
+
+        #menu li:hover {
+            background-color: #ffDD60;
+        }
+
+        #forPuzzle {
+            position: absolute;
+            width: 95vw;
+            height: 95vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffdd;
+            overflow: hidden;
+        }
+
+        .polypiece {
+            display: block;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .moving {
+            transition-property: top, left;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+        }
+
+        .gameCanvas {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        /* Additional styles for the buttons and select elements */
+        .puzzle-piece-button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .puzzle-piece-button:hover {
+            background-color: #27ae60;
+        }
+
+        select {
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        select option {
+            background-color: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script src="k.js"></script>
+    <div id="forPuzzle">
+        <!-- Puzzle display area -->
+    </div>
+
+    <ul id="menu">
+        <li id="defaultImage">&#x2630; Default Image</li>
+        <li id="loadImage">Load Image</li>
+        <li>Shape:
+            <select id="shape">
+                <option value="1" selected>Classic</option>
+                <option value="2">Triangle</option>
+                <option value="3">Round</option>
+                <option value="4">Straight</option>
+            </select>
+        </li>
+        <li><button class="puzzle-piece-button" data-pieces="12">12 Pieces</button></li>
+        <li><button class="puzzle-piece-button" data-pieces="25">25 Pieces</button></li>
+        <li><button class="puzzle-piece-button" data-pieces="50">50 Pieces</button></li>
+        <li><button class="puzzle-piece-button" data-pieces="100">100 Pieces</button></li>
+        <li><button class="puzzle-piece-button" data-pieces="200">200 Pieces</button></li>
+    </ul>
+
+    <script>
+        document.getElementById('defaultImage').addEventListener('click', function() {
+            alert('Default image selected.');
+            // Add functionality to load a default image
+        });
+
+        document.getElementById('loadImage').addEventListener('click', function() {
+            alert('Load your own image.');
+            // Add functionality to load a user-defined image
+        });
+
+        document.querySelectorAll('.puzzle-piece-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const pieces = this.getAttribute('data-pieces');
+                alert(`Selected ${pieces} pieces.`);
+                // Add functionality to generate puzzle with selected number of pieces
+            });
+        });
+
+        document.getElementById('shape').addEventListener('change', function() {
+            const selectedShape = this.value;
+            alert(`Selected shape: ${selectedShape}`);
+            // Add functionality to change puzzle shape
+        });
+    </script>
+
+</body>
+</html>

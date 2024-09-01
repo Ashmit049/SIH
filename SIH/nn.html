@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decalogue Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-image: linear-gradient(144deg, #1a1a2e, #16213e);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .hamburger {
+            font-size: 24px;
+            color: #00DDEB;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .hamburger:hover {
+            color: #AF40FF;
+        }
+        .nav {
+            display: flex;
+            gap: 10px;
+        }
+        .button-64 {
+            align-items: center;
+            background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+            border: 0;
+            border-radius: 4px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 10px 20px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            justify-content: center;
+            line-height: 1em;
+            max-width: 100%;
+            min-width: 80px;
+            padding: 2px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .button-64:active,
+        .button-64:hover {
+            outline: 0;
+            transform: scale(1.05);
+        }
+        .button-64 span {
+            background-color: #16213e;
+            padding: 10px 14px;
+            border-radius: 3px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+        }
+        .button-64:hover span {
+            background: none;
+        }
+        @media (min-width: 768px) {
+            .button-64 {
+                font-size: 14px;
+                min-width: 100px;
+            }
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            padding: 30px;
+        }
+        .sidebar {
+            width: 60px;
+            background-color: #16213e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar-button {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            background-color: #1a1a2e;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .sidebar-button:hover {
+            background-color: #AF40FF;
+        }
+        .dashboard {
+            flex-grow: 1;
+            background-color: #16213e;
+            border-radius: 8px;
+            margin-left: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00DDEB;
+        }
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .flow-item {
+            width: 60px;
+            height: 60px;
+            background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .flow-arrow {
+            width: 30px;
+            height: 2px;
+            background-color: #ffffff;
+            position: relative;
+        }
+        .flow-arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #ffffff;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-card" onclick="window.open('crossword.html', '_blank')">
+        
+    <div class="header">
+        <button class="hamburger" onclick="alert('Menu clicked!')">☰</button>
+        <div class="nav">
+            <button class="button-64" role="button" onclick="alert('Home clicked!')"><span class="text">Home</span></button>
+            <button class="button-64" role="button" onclick="alert('Dashboard clicked!')"><span class="text">Dashboard</span></button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <button class="sidebar-button" onclick="alert('Home clicked!')">🏠</button>
+            <button class="sidebar-button" onclick="alert('Search clicked!')">🔍</button>
+            <button class="sidebar-button" onclick="alert('Stats clicked!')">📊</button>
+        </div>
+        <div class="dashboard">
+            <div class="section">
+                <div class="section-title">Preamble:</div>
+                <div class="flow-diagram">
+                    <div class="flow-item">📖</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-item">📄</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-item">📄</div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Parts:</div>
+                <div class="flow-diagram">
+                    <div class="flow-item">📖</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-item">📖</div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-item" style="position: relative;">
+                        📄
+                        <div style="position: absolute; top: -15px; right: -15px; background-color: #FF4500; border-radius: 5px; padding: 2px 5px; font-size: 10px;">subheading</div>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="flow-item">📄</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // You can add more JavaScript functionality here if needed
+    </script>
+</body>
+</html>
